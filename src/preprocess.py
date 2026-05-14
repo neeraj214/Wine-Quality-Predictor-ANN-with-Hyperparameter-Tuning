@@ -4,7 +4,7 @@ import os
 import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder
-from tensorflow.keras.utils import to_categorical
+import tensorflow as tf
 
 def preprocess_data():
     # Load dataset
@@ -35,7 +35,7 @@ def preprocess_data():
 
     # 5. Apply to_categorical() for one-hot encoding
     print("Applying one-hot encoding...")
-    y_categorical = to_categorical(y_encoded)
+    y_categorical = tf.keras.utils.to_categorical(y_encoded)
 
     # 6. Split 80-20 train/test
     print("Splitting data into train and test sets (80-20)...")
