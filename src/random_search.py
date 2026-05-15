@@ -61,7 +61,7 @@ def perform_random_search():
         cv=3, 
         scoring='accuracy', 
         random_state=42,
-        n_jobs=-1
+        n_jobs=1
     )
     
     # Convert y_train to integers for scikit-learn compatibility
