@@ -3,7 +3,7 @@ import os
 import json
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import GridSearchCV
-from src.model import build_model
+from model import build_model
 import tensorflow as tf
 
 def perform_grid_search():
