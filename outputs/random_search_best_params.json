@@ -1,0 +1,7 @@
+{
+    "batch_size": 64,
+    "epochs": 50,
+    "layers": 3,
+    "learning_rate": 0.004615092843748656,
+    "neurons": 256
+}
