@@ -58,7 +58,7 @@ def perform_grid_search():
         param_grid=param_grid, 
         cv=3, 
         scoring='accuracy', 
-        n_jobs=1
+        n_jobs=-1
     )
     
     # Convert y_train to integers for scikit-learn compatibility
