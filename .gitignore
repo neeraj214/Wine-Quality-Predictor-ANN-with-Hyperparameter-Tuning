@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data and Models (Optional: keep if you want to track small versions)
+# data/
+# models/
+# outputs/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
