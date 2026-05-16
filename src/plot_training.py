@@ -80,7 +80,7 @@ def plot_confusion_matrix(model_path, data_dir, output_dir):
     print("="*40)
     print(f"Accuracy Score: {accuracy_score(y_test_classes, y_pred_classes):.4f}")
     print("\nClassification Report:")
-    print(classification_report(y_test_classes, y_pred_classes, target_names=target_names))
+    print(classification_report(y_test_classes, y_pred_classes, labels=range(len(target_names)), target_names=target_names))
 
 if __name__ == "__main__":
     history_file = 'outputs/baseline_history.json'

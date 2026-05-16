@@ -97,7 +97,7 @@ def train_model():
     print("="*40)
     print(f"Test Accuracy: {accuracy_score(y_test_classes, y_pred_classes):.4f}")
     print("\nClassification Report:")
-    print(classification_report(y_test_classes, y_pred_classes, target_names=target_names))
+    print(classification_report(y_test_classes, y_pred_classes, labels=range(len(target_names)), target_names=target_names))
 
 if __name__ == "__main__":
     train_model()
