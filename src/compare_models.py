@@ -48,9 +48,9 @@ def compare_models():
             
             metrics = {
                 "accuracy": float(accuracy_score(y_true, y_pred)),
-                "precision": float(precision_score(y_true, y_pred, average='weighted', zero_division=0)),
-                "recall": float(recall_score(y_true, y_pred, average='weighted', zero_division=0)),
-                "f1-score": float(f1_score(y_true, y_pred, average='weighted', zero_division=0))
+                "precision": float(precision_score(y_true, y_pred, average='weighted', zero_division=0.0)), # type: ignore
+                "recall": float(recall_score(y_true, y_pred, average='weighted', zero_division=0.0)), # type: ignore
+                "f1-score": float(f1_score(y_true, y_pred, average='weighted', zero_division=0.0)) # type: ignore
             }
             results[name] = metrics
             
