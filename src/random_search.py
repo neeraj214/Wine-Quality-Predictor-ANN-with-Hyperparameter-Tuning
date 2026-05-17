@@ -1,10 +1,10 @@
 import numpy as np
 import os
 import json
-from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier  # type: ignore
 from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import uniform
-from model import build_model
+from model import build_model  # type: ignore
 import tensorflow as tf
 
 def perform_random_search():
