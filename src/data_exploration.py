@@ -32,7 +32,7 @@ def explore_data():
     # describe() includes mean and std by default. Median is the 50% percentile.
     print("\n--- Descriptive Statistics (Mean, Median, Std) ---")
     stats = df_wine.describe().T[['mean', '50%', 'std']]
-    stats.rename(columns={'50%': 'median'}, inplace=True)
+    stats = stats.rename(columns={'50%': 'median'})  # type: ignore
     print(stats)
 
     # 3. Check and print missing values count per column
