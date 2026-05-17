@@ -62,8 +62,8 @@ def preprocess_data():
         pickle.dump(le, f)
 
     print("\nPreprocessing complete!")
-    print(f"Train set shape: {X_train.shape}")
-    print(f"Test set shape: {X_test.shape}")
+    print(f"Train set shape: {X_train.shape}")  # type: ignore
+    print(f"Test set shape: {X_test.shape}")  # type: ignore
     print("Artifacts saved in data/processed/ and models/")
 
 if __name__ == "__main__":
