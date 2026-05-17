@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import json
-import tensorflow as tf
+
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import Adam
@@ -16,7 +16,7 @@ def build_model(neurons=128, layers=2, learning_rate=0.001, dropout=0.3, input_s
     model = Sequential()
     for i in range(layers):
         if i == 0:
-            model.add(Dense(neurons, activation='relu', input_shape=(input_shape,)))
+            model.add(Dense(neurons, activation='relu', input_shape=(input_shape,)))  # type: ignore
         else:
             model.add(Dense(neurons, activation='relu'))
         model.add(Dropout(dropout))
