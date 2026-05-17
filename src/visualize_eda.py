@@ -24,7 +24,7 @@ def visualize_eda():
     numerical_cols = df.select_dtypes(include=['float64', 'int64']).columns
     df[numerical_cols].hist(bins=20, figsize=(15, 12), color='skyblue', edgecolor='black')
     plt.suptitle("Feature Distributions", fontsize=16)
-    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    plt.tight_layout(rect=(0.0, 0.03, 1.0, 0.95))
     plt.savefig('outputs/histograms.png')
     plt.close()
 
@@ -32,7 +32,7 @@ def visualize_eda():
     print("Generating correlation heatmap...")
     plt.figure(figsize=(12, 10))
     # Select only numeric columns for correlation
-    corr_matrix = df[numerical_cols].corr()
+    corr_matrix = df[numerical_cols].corr()  # type: ignore
     sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=0.5)
     plt.title("Feature Correlation Heatmap", fontsize=16)
     plt.savefig('outputs/heatmap.png')
