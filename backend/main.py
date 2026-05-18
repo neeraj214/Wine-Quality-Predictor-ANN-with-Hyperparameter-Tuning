@@ -60,13 +60,17 @@ def load_resources():
         print("Warning: No model could be loaded.")
 
     # Load scaler
-    scaler_path = os.path.join(BASE_DIR, "data", "processed", "scaler.pkl")
+    scaler_path = os.path.join(BASE_DIR, "models", "scaler.pkl")
+    if not os.path.exists(scaler_path):
+        scaler_path = os.path.join(BASE_DIR, "data", "processed", "scaler.pkl")
     if os.path.exists(scaler_path):
         with open(scaler_path, "rb") as f:
             scaler = pickle.load(f)
             
     # Load label encoder
-    le_path = os.path.join(BASE_DIR, "data", "processed", "label_encoder.pkl")
+    le_path = os.path.join(BASE_DIR, "models", "label_encoder.pkl")
+    if not os.path.exists(le_path):
+        le_path = os.path.join(BASE_DIR, "data", "processed", "label_encoder.pkl")
     if os.path.exists(le_path):
         with open(le_path, "rb") as f:
             label_encoder = pickle.load(f)
