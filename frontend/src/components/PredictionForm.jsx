@@ -133,7 +133,7 @@ export default function PredictionForm() {
             <div className="flex flex-col items-center">
               <span className="text-violet-200/70 uppercase tracking-wider text-xs font-bold mb-3">Predicted Quality</span>
               <div className="w-32 h-32 rounded-full flex items-center justify-center bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-[0_0_40px_rgba(139,92,246,0.6)] border-4 border-white/10">
-                <span className="text-6xl font-black text-white drop-shadow-md">{result.prediction ?? '-'}</span>
+                <span className="text-6xl font-black text-white drop-shadow-md">{result.predicted_quality ?? '-'}</span>
               </div>
             </div>
             
@@ -153,7 +153,7 @@ export default function PredictionForm() {
               {Object.entries(result.probabilities).sort((a, b) => Number(a[0]) - Number(b[0])).map(([quality, prob]) => {
                 const percentage = (prob * 100).toFixed(1);
                 // Highlight the predicted class
-                const isPredicted = String(result.prediction) === String(quality);
+                const isPredicted = String(result.predicted_quality) === String(quality);
                 
                 return (
                   <div key={quality} className={`flex items-center text-sm ${isPredicted ? 'text-white' : 'text-gray-400'}`}>
